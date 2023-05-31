@@ -36,4 +36,32 @@ function handleSymbol(symbol){
     }
 }
 
+function Math(symbol){
+    if (buffer === '0') return;
+    const intbuffer = parseInt(buffer);
+    if (runningTotal===0)  runningTotal=intbuffer;
+    else flushOperation(intbuffer);
+    previousoperator = symbol;
+    buffer = '0';
 
+}
+
+function flushOperation(intbuffer){
+    if (previousoperator==='+') runningTotal+=intbuffer;
+    if (previousoperator === '−') runningTotal-=intbuffer;
+    if (previousoperator=== '×') runningTotal*=intbuffer;
+    if (previousoperator === '÷') runningTotal/=intbuffer;
+}
+
+function handleNumber(numberString){
+    if (buffer==="0") buffer=numberString;
+    else buffer+=numberString;
+}
+
+function init(){
+    document.querySelector('.buttons').addEventListener('click',function(event) {
+            buttonClick(event.target.innerText);
+    })
+}
+
+init();
