@@ -2,7 +2,6 @@
 
 This is a simple calculator app built using HTML, CSS, and JavaScript.
 
-## Screenshots
 
 ![Calculator App Screenshot](screenshot.png)
 
